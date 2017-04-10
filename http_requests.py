@@ -12,34 +12,33 @@ class RequestMethod(object):
 
 	@classmethod
 	def get(cls, url, param=None):
-		token, headers = cls.header_add_token()
+		headers = cls.header_add_token()
 		if param:
-			url = url + '/' + param + '.json'
+			url = url + '/' + param
 		response = requests.get(url, headers=headers)
 		return response
-	
+
 	@classmethod
 	def post(cls, url, param=None, data=None):
-		token, headers = cls.header_add_token()
+		headers = cls.header_add_token()
 		if param:
-			url = url + '/' + param + '.json'
-		print url
+			url = url + '/' + param
 		response = requests.post(url, headers=headers, data=json.dumps(data))
 		return response
 
 	@classmethod
 	def put(cls, url, param=None, data=None):
-		token, headers = cls.header_add_token()
+		headers = cls.header_add_token()
 		if param:
-			url = url + '/' + param + '.json'
+			url = url + '/' + param
 		response = requests.put(url, headers=headers, data=json.dumps(data))
 		return response
 
 	@classmethod
 	def delete(cls, url, param=None):
-		token, headers = cls.header_add_token()
+		headers = cls.header_add_token()
 		if param:
-			url = url + '/' + param + '.json'
+			url = url + '/' + param
 		response = requests.delete(url, headers=headers)
 		return response
 
@@ -50,7 +49,7 @@ class RequestMethod(object):
 		"""
 		token = fetch_token()
 		headers['X-Auth-Token'] = token
-		return token, headers
+		return headers
 
 def main():
 	pass
