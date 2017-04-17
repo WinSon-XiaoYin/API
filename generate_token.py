@@ -12,7 +12,7 @@ def fetch_token():
 	return token
 
 def main():
-	token()
+	pass
 
 if __name__ == '__main__':
 	main()
