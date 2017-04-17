@@ -1,1 +1,1 @@
-# This is a openstack restful apt request tool.
+# This is a openstack restful api request tool.
