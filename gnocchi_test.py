@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from request_api.gnocchi import *
+from request_api.gnocchi import GnocchiManger
 
-response = resource_list(param='')
+response = GnocchiManger.resource_list(param='')
 print response
