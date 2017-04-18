@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from request_api.neutron import *
+from request_api.neutron import NeutronManager
 
 # 网络列表
 # response = networks_list()
@@ -31,5 +31,5 @@ from request_api.neutron import *
 # network_id = "02b80f83-3696-4a28-a883-fa1d72b1b570"
 # param = "networks/{network_id}".format(network_id=network_id)
 # delete_network(url=neutron_url, param=param)
-content = networks_list(param='')
+content = NeutronManager.networks_list(param='')
 print content
