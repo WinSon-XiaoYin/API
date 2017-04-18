@@ -1,7 +1,13 @@
 import os
 import requests
 import json
-from settings import keystone_url
+import settings
+
+
+def format_url(service_url=''):
+    url = settings.protocol + "://" + settings.ip + ":" \
+          + settings.keystone + service_url
+    return url
 
 
 def fetch_token():
@@ -9,8 +15,9 @@ def fetch_token():
                      'passwordCredentials': {'username': os.environ['OS_USERNAME'],
                                              'password': os.environ['OS_PASSWORD']}}}
 
-    print "req: POST %s" % keystone_url
-    response = requests.post(url=keystone_url, data=json.dumps(auth))
+    url = format_url(service_url=settings.token_url)
+    print "req: POST %s" % url
+    response = requests.post(url=url, data=json.dumps(auth))
     content = json.loads(response.content)
     token = content['access']['token']['id']
     return token

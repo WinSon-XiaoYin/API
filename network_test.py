@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from http_requests import RequestMethod
 from request_api.neutron import *
-import json
 
 # 网络列表
 # response = networks_list()
