@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from request_api.neutron import *
+from request_api.neutron import NeutronManager
 
-content = networks_list(param='')
+content = NeutronManager.networks_list(param='')
 print content

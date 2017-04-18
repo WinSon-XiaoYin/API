@@ -1,6 +1,6 @@
 import requests
 import json
-from generate_token import fetch_token
+from generate_token import keystoneManager
 
 headers = {"Accept": "application/json"}
 
@@ -65,7 +65,7 @@ class RequestMethod(object):
         """
         fetch a token
         """
-        token = fetch_token()
+        token = keystoneManager.fetch_token()
         headers['X-Auth-Token'] = token
         return headers
 
