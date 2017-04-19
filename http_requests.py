@@ -69,10 +69,3 @@ class RequestMethod(object):
         headers['X-Auth-Token'] = token
         return headers
 
-
-def main():
-    pass
-
-
-if __name__ == "__mian__":
-    main()
