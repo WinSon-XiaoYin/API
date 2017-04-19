@@ -26,4 +26,3 @@ class NeutronManager(object):
     def format_url():
         service = settings.protocol + "://" + settings.ip + ":" + settings.neutron
         return service
-
